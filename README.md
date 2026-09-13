@@ -1,3 +1,4 @@
+[![MLOps CI/CD](https://github.com/AdityaSonawane-Code/mlops-customer-churn/actions/workflows/ci.yml/badge.svg)](https://github.com/AdityaSonawane-Code/mlops-customer-churn/actions/workflows/ci.yml)
 \# AI Customer Churn Prediction \& MLOps Platform
 
 
