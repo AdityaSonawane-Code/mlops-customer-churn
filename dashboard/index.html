@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Customer Churn MLOps Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header class="header">
+            <div>
+                <h1>Customer Churn MLOps</h1>
+                <p>AI Model Monitoring & Prediction Dashboard</p>
+            </div>
+
+            <div class="status">
+                <span class="status-dot"></span>
+                API Online
+            </div>
+        </header>
+
+
+        <!-- Summary Cards -->
+
+        <section class="cards">
+
+            <div class="card">
+                <div class="card-title">Total Predictions</div>
+                <div class="card-value" id="totalPredictions">--</div>
+                <div class="card-description">Production requests</div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Predicted Churn</div>
+                <div class="card-value" id="predictedChurn">--</div>
+                <div class="card-description">Customers predicted to churn</div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">High Risk</div>
+                <div class="card-value" id="highRisk">--</div>
+                <div class="card-description">Customers requiring attention</div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Avg Churn Probability</div>
+                <div class="card-value" id="averageProbability">--</div>
+                <div class="card-description">Model confidence</div>
+            </div>
+
+        </section>
+
+
+        <!-- Risk Distribution -->
+
+        <section class="panel">
+
+            <div class="panel-header">
+                <div>
+                    <h2>Risk Distribution</h2>
+                    <p>Current production prediction breakdown</p>
+                </div>
+
+                <button onclick="loadMetrics()">Refresh</button>
+            </div>
+
+
+            <div class="risk-container">
+
+                <div class="risk-item">
+                    <div class="risk-label">
+                        <span>High Risk</span>
+                        <span id="highRiskPercent">--</span>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-bar high" id="highBar"></div>
+                    </div>
+                </div>
+
+
+                <div class="risk-item">
+                    <div class="risk-label">
+                        <span>Medium Risk</span>
+                        <span id="mediumRiskPercent">--</span>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-bar medium" id="mediumBar"></div>
+                    </div>
+                </div>
+
+
+                <div class="risk-item">
+                    <div class="risk-label">
+                        <span>Low Risk</span>
+                        <span id="lowRiskPercent">--</span>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-bar low" id="lowBar"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Model Information -->
+
+        <section class="panel">
+
+            <div class="panel-header">
+                <div>
+                    <h2>Model Information</h2>
+                    <p>Currently deployed machine learning model</p>
+                </div>
+            </div>
+
+
+            <div class="model-grid">
+
+                <div>
+                    <span class="info-label">Model</span>
+                    <strong>Logistic Regression</strong>
+                </div>
+
+                <div>
+                    <span class="info-label">ROC-AUC</span>
+                    <strong>0.8419</strong>
+                </div>
+
+                <div>
+                    <span class="info-label">Framework</span>
+                    <strong>Scikit-learn</strong>
+                </div>
+
+                <div>
+                    <span class="info-label">API</span>
+                    <strong>FastAPI</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- System Architecture -->
+
+        <section class="panel">
+
+            <div class="panel-header">
+                <div>
+                    <h2>ML Pipeline</h2>
+                    <p>Production machine learning architecture</p>
+                </div>
+            </div>
+
+
+            <div class="pipeline">
+
+                <div class="pipeline-step">
+                    <span>01</span>
+                    <strong>Raw Data</strong>
+                </div>
+
+                <div class="arrow">→</div>
+
+                <div class="pipeline-step">
+                    <span>02</span>
+                    <strong>Preprocessing</strong>
+                </div>
+
+                <div class="arrow">→</div>
+
+                <div class="pipeline-step">
+                    <span>03</span>
+                    <strong>ML Model</strong>
+                </div>
+
+                <div class="arrow">→</div>
+
+                <div class="pipeline-step">
+                    <span>04</span>
+                    <strong>FastAPI</strong>
+                </div>
+
+                <div class="arrow">→</div>
+
+                <div class="pipeline-step">
+                    <span>05</span>
+                    <strong>Monitoring</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <footer>
+            AI Customer Churn Prediction & Monitoring Platform
+        </footer>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

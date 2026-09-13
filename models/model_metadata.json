@@ -1,0 +1,7 @@
+{
+    "best_model": "Logistic Regression",
+    "best_roc_auc": 0.8418610659019866,
+    "training_rows": 5634,
+    "testing_rows": 1409,
+    "features": 45
+}
